@@ -46,9 +46,9 @@ impl StylusPrimitivesDemo {
     
     // 6. Convert gas value into ink representation
     pub fn convert_gas(&self, gas: u64) -> u64 {
-        gas.into()
+        self.vm().gas_to_ink(gas)
     }
-    
+        
     // 7. Emit the EmitMe event
     pub fn emit_my_event(&self) {
         let sender = self.vm().msg_sender();
